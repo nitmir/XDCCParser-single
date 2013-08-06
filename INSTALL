@@ -1,0 +1,8 @@
+Requirements: 
+Apache webserver
+mod_rewrite
+PHP5 (has not been tested with PHP4, but it should work)
+See your host for questions regarding the requirements.
+Instructions: 
+make sure templates_c is chmoded to 777
+read the comments in config.php and modify the file to suit your needs

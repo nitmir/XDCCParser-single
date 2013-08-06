@@ -1,0 +1,46 @@
+1.1.5:
+- remove irc formatting, windows line breaks
+- fixed regex for maxspeed and cap
+files affected:
+- index.php
+
+1.1.4:
+- no longer forcing certain file extensions
+files affected:
+- index.php
+
+1.1.3:
+- works when there's only one pack now
+- forgot to update the packed js after fixing the prompt bug
+- using minified js instead of packed
+- deleted an unused js function (searchFor2)
+- included the rain skin from global 1.2
+- deny from all .htaccess in templates_c and tpl
+files affected:
+- config.php
+- index.php
+- packlist.js
+- style3.css
+- templates_c/.htaccess
+- tpl/.htaccess
+- uncompressed.js
+
+1.1.2:
+- made irc channel editable via config.php
+- fixed prompt bug - displays pack number instead of gets now
+- fixed stats regex bug
+files affected:
+- config.php
+- index.php
+- packlist.js
+- tpl/header.tpl
+- uncompressed.js
+
+1.1.1:
+- fixed sort
+files affected:
+- packlist.js
+- uncompressed.js
+
+1.1.0:
+- initial v1.1 single release
