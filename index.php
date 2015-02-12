@@ -24,7 +24,7 @@ function fetch_packs(&$packlist, &$columnsort) {
 	$sizes = array('K' => 1.0/1024, 'M' => 1, 'G' => 1024, 'T' => 1048576);
 	for($i=0;count($packs['0'])>$i;$i++) {
 		$xpacks[$packs['1'][$i]]['number'] = $packs['1'][$i];
-		$xpacks[$packs['1'][$i]]['name'] = $packs['5'][$i].".".$packs['6'][$i];
+		$xpacks[$packs['1'][$i]]['name'] = $packs['5'][$i];
 		$packs['3'][$i] = round($packs['3'][$i]*doubleval($sizes[$packs['4'][$i]]));
 		$xpacks[$packs['1'][$i]]['size'] = $packs['3'][$i];
 		$xpacks[$packs['1'][$i]]['gets'] = $packs['2'][$i];
@@ -79,9 +79,15 @@ if ( $bots[$_GET['bot']] ) {
 	$stats['currbw'] = explode(", ", $stats['currbw']);
 	$stats['currbw'] = $stats['currbw'][0];
 
-	$s->assign("bot", $_GET['bot']);
+        if(isset($_GET['bot']))
+		$s->assign("bot", $_GET['bot']);
+        else
+		$s->assign("bot", "");
 	$s->assign("packlist", $packlist);
-	$s->assign("search", $_GET['search']);
+	if(isset($_GET['search']))
+		$s->assign("search", $_GET['search']);
+	else
+		$s->assign("search", "");
 	foreach($stats as $key => $value) {
 		$s->assign($key, $value);
 	}
